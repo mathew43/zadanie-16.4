@@ -1,6 +1,7 @@
 import React from 'react';
 import uuid from 'uuid';
 import style from './App.css';
+import Title from '../containers/Title';
 
 
 
@@ -38,8 +39,9 @@ render() {
     return (
         <div className={style.TodoApp}>
             <Title title="Todo"/>
+            <ul>{list}</ul>
+            <p> liczba zadań dodanych do listy: {list.length}</p>
 
-    
         </div>
     );
 }
