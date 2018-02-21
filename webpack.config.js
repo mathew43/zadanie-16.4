@@ -32,10 +32,11 @@ module.exports = {
         },
 
     plugins: [
-      new webpack.optimize.UglifyJsPlugin(),
-      new HtmlWebpackPlugin({
-      template: 'src/index.html',
-      filename: 'index.html',
-      inject: 'body'
-    })]
+    //   new webpack.optimize.UglifyJsPlugin(),
+    //   new HtmlWebpackPlugin({
+    //   template: 'src/index.html',
+    //   filename: 'index.html',
+    //   inject: 'body'
+    // })
+      ]
 };

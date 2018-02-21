@@ -49,7 +49,7 @@ render() {
         <div className={style.TodoApp}>
             <Title title="Todo"/>
 
-            <ToDoList list={this.state.list} />
+            <TodoList list={this.state.list} />
 
             <ul>{list}</ul>
             <p> liczba zadań dodanych do listy: {list.length}</p>
