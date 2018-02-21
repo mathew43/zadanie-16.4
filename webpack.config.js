@@ -10,6 +10,11 @@ module.exports = {
         path: path.resolve(__dirname, 'build'),
         filename: 'app.bundle.js'
     },
+    devServer: {
+      contentBase: path.join(__dirname, "/"),
+      compress: true,
+      port: 9000
+    },
     module: {
       rules: [
         {
@@ -31,12 +36,13 @@ module.exports = {
           ]
         },
 
-    plugins: [
-    //   new webpack.optimize.UglifyJsPlugin(),
-    //   new HtmlWebpackPlugin({
-    //   template: 'src/index.html',
-    //   filename: 'index.html',
-    //   inject: 'body'
-    // })
-      ]
+    plugins: 
+[
+new HtmlWebpackPlugin({
+        template: 'src/index.html',
+        filename: 'index.html',
+        inject: 'body',
+    })
+]
+      
 };
