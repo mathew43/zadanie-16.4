@@ -2,6 +2,7 @@ import React from 'react';
 import uuid from 'uuid';
 import style from './App.css';
 import Title from '../containers/Title';
+import TodoList from './TodoList';
 
 
 
@@ -46,15 +47,10 @@ render() {
   });
 
     return (
-        <div className={style.TodoApp}>
-            <Title title="Todo"/>
-
-            <ToDoList list={this.state.list} />
-
-            <ul>{list}</ul>
-            <p> liczba zadań dodanych do listy: {list.length}</p>
-
-        </div>
+      <div className={style.TodoApp}>
+        <Title title={this.state.appTitle}/>
+        <TodoList list={this.state.data} onRemove={this.removeTodo.bind(this)}/>
+      </div>
     );
 }
 

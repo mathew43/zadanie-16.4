@@ -4,7 +4,8 @@
   "description": "",
   "main": "webpack.config.js",
   "scripts": {
-    "start": "webpack"
+    "build": "NODE_ENV=production webpack",
+    "start": "webpack-dev-server --config ./webpack.config.js"
   },
   "repository": {
     "type": "git",
@@ -25,7 +26,8 @@
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "style-loader": "^0.20.2",
-    "webpack": "^3.11.0"
+    "webpack": "^3.11.0",
+    "webpack-dev-server": "^2.11.1"
   },
   "dependencies": {
     "html-webpack-plugin": "^2.30.1",
