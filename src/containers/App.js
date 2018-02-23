@@ -38,17 +38,10 @@ removeTodo(id){
 }
 
 render() {
-  const list = this.state.data.map((item) => {
-    return(
-        <li key={item.id}>
-          <p>{item.text}</p>
-        </li>
-    )
-  });
 
     return (
       <div className={style.TodoApp}>
-        <Title title={this.state.appTitle}/>
+        <Title title="ToDo"/>
         <TodoList list={this.state.data} onRemove={this.removeTodo.bind(this)}/>
       </div>
     );

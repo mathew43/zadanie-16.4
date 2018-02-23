@@ -1,7 +1,14 @@
 import React from 'react';
 
-export default class ToDoList extends React.Component{
+export default class TodoList extends React.Component{
+
+
+  removeItem(itemId){
+    this.props.onRemove(itemId);
+  }
+
   render(){
+
     console.log(this.props);
     return(
       <div>
@@ -13,6 +20,5 @@ export default class ToDoList extends React.Component{
         <p>Ilość zadań: {this.props.list.length}</p>
       </div>
     )
-
   }
 }
