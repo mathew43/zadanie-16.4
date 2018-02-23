@@ -42,7 +42,8 @@ render() {
     return (
       <div className={style.TodoApp}>
         <Title title="ToDo"/>
-        <TodoList list={this.state.data} onRemove={this.removeTodo.bind(this)}/>
+        <TodoList list={this.state.data} onRemove={this.removeTodo.bind(this)} />
+        <Todo onAdd={this.addTodo.bind(this)}/>
       </div>
     );
 }
