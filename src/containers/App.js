@@ -3,7 +3,7 @@ import uuid from 'uuid';
 import style from './App.css';
 import Title from '../containers/Title';
 import TodoList from './TodoList';
-
+import Todo from './Todo';
 
 
 class App extends React.Component{
@@ -23,30 +23,31 @@ class App extends React.Component{
       };
     }
 
-addTodo(val){
-  const todo = {
-    text: val,
-    id: uuid.v4(),
-  };
-  const data = [...this.state.data, todo];
-  this.setState({data});
-}
 
-removeTodo(id){
-  const remainder = this.state.data.filter(todo => todo.id !== id);
-  this.setState({data: remainder});
-}
+  addTodo(val){
+    const todo = {
+      text: val,
+      id: uuid.v4(),
+    };
+    const data = [...this.state.data, todo];
+    this.setState({data});
+  }
 
-render() {
+  removeTodo(id){
+    const remainder = this.state.data.filter(todo => todo.id !== id);
+    this.setState({data: remainder});
+  }
 
-    return (
-      <div className={style.TodoApp}>
-        <Title title="ToDo"/>
-        <TodoList list={this.state.data} onRemove={this.removeTodo.bind(this)} />
-        <Todo onAdd={this.addTodo.bind(this)}/>
-      </div>
-    );
-}
+  render() {
+
+      return (
+        <div className={style.TodoApp}>
+          <Title title="ToDo"/>
+          <TodoList list={this.state.data} onRemove={this.removeTodo.bind(this)} />
+          <Todo onAdd={this.addTodo.bind(this)}/>
+        </div>
+      );
+  }
 
 
 }
